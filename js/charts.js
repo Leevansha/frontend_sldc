@@ -56,6 +56,8 @@ function drawFrequencyChart() {
 	
 	freqChart = new google.visualization.AreaChart(document
 			.getElementById('freqChart_div'));
+	freqChart1 = new google.visualization.AreaChart(document
+			.getElementById('freqChart_div1'));
 	freqChartoptions = {
 		 is3D:true,
 		curveType: 'function',
@@ -82,9 +84,11 @@ function drawFrequencyChart() {
 	};
 	makeFreqJsonDataRequest( 10,
 			freqChartdata, freqChart, freqChartoptions);
+	makeFreqJsonDataRequest( 10,
+			freqChartdata, freqChart1, freqChartoptions);
 	console.log("Data:" + freqChartdata.getNumberOfRows()
 			+ (new Date()).toString()); //
-	freqChart.draw(freqChartdata, freqChartoptions);
+	freqChart1.draw(freqChartdata, freqChartoptions);
 	setInterval(updateFrequencyChartData, 10 * 1000);
 }
 function updateFrequencyChartData() {
@@ -92,6 +96,9 @@ function updateFrequencyChartData() {
 	makeFreqJsonDataRequest( 15,
 			freqChartdata, freqChart, freqChartoptions);
 	freqChart.draw(freqChartdata, freqChartoptions);
+	makeFreqJsonDataRequest( 15,
+			freqChartdata, freqChart1, freqChartoptions);
+	freqChart1.draw(freqChartdata, freqChartoptions);
 }
 
 function makeDrawalJsonDataRequest(url, noOfRecord, data, chart, options) {
@@ -126,6 +133,8 @@ function drawDrawalChart() {
 	drawalChartdata.addColumn({ type: 'string', role: 'style' });
 	drawalChart = new google.visualization.AreaChart(document
 			.getElementById('drawalChart_div'));
+			drawalChart1 = new google.visualization.AreaChart(document
+			.getElementById('drawalChart_div1'));
 	drawalChartoptions = {
 		 is3D:true,
 		  curveType: 'function',
@@ -157,6 +166,11 @@ function drawDrawalChart() {
 	makeDrawalJsonDataRequest("http://localhost:9091/scadadata/drawal/", 15,
 			drawalChartdata, drawalChart, drawalChartoptions);
 	drawalChart.draw(drawalChartdata, drawalChartoptions);
+	
+	makeDrawalJsonDataRequest("http://localhost:9091/scadadata/drawal/", 15,
+			drawalChartdata, drawalChart1, drawalChartoptions);
+	drawalChart1.draw(drawalChartdata, drawalChartoptions);
+
 	setInterval(updateDrawalChartData, 10 * 1000);
 }
 function updateDrawalChartData() {
@@ -164,6 +178,10 @@ function updateDrawalChartData() {
 	makeDrawalJsonDataRequest("http://localhost:9091/scadadata/drawal/", 15,
 			drawalChartdata, drawalChart, drawalChartoptions);
 	drawalChart.draw(drawalChartdata, drawalChartoptions);
+	
+	makeDrawalJsonDataRequest("http://localhost:9091/scadadata/drawal/", 15,
+			drawalChartdata, drawalChart1, drawalChartoptions);
+	drawalChart1.draw(drawalChartdata, drawalChartoptions);
 }
 
 
