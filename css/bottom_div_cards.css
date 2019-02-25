@@ -1,0 +1,20 @@
+#ContainerDiv {
+  margin: auto;
+   
+    padding: 30px 0px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  width: 100%;
+}
+
+#InnerContainer {
+  width: 100%;
+}
+
+#TheBelowDiv > .card-deck > .card {
+ border: 1px solid black;
+ height: 400px;
+ overflow:hidden;
+ 
+}

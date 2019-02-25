@@ -1,0 +1,24 @@
+body
+{
+    padding-top: 20px;
+}
+#myCarousel{
+	padding:8px 0px;
+}
+#myCarousel .nav a small
+{
+    display: block;
+	
+}
+#myCarousel .nav
+{
+    background: #eee;
+}
+.nav-justified > li > a
+{
+    border-radius: 0px;
+}
+.nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; color:white;}
+.nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; color:white; }
+.nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; color:white;}
+.nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; color:white;}
